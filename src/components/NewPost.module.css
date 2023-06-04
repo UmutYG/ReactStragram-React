@@ -1,0 +1,10 @@
+.form-new-post {
+    background-color: #fff;
+    min-height: 60rem;
+    min-width: 40rem;
+}
+
+
+label, input {
+    display: block;
+}

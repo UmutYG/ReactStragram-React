@@ -13,6 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%; */
     --primary400: #3b82f6;
+    --primary300: #93c5fd;
+    --primary200: #bfdbfe;
 
     --gray500: #4b5563;
     --gray400: #6b7280;
@@ -72,10 +74,12 @@ body {
     background-color: #3b82f6;
 }
 
+.margin-bottom-sm {
+    margin-bottom: 1.2rem !important;
+}
+
 .margin-top-sm {
     margin-top: 1.2rem !important;
-    color: #fff;
-    font-weight: bold;
 }
 
 .strong {
@@ -88,39 +92,42 @@ a:visited {
     color: #4b5563;
 }
 
-/* 
-01 --- TYPHORGRAPHY  
-  - Font sizes (px):
-  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
-  - Font weights:
-  Default : 400
-  500
-  600
-  700
+.text-xs {
+    font-size: 1.2rem;
+}
 
-  -Line heights:
-  Default: 1
-  Small: 1.05
-  Phrargraph: 1.6
-  1.8
+.text-s {
+    font-size: 1.4rem;
+}
 
-02 --- COLORS
-  
-03 --- IMAGES
+.text-m {
+    font-size: 1.6rem;
+}
 
-04 --- ICONS 
+.icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
 
-05 --- SHADOWS
-
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.icon--l {
+    width: 3.2rem;
+    height: 3.2rem;
+}
 
 
-06 --- BORDER RADIUS
-Default: 7px
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color:rgba(0, 0, 0, 0.3);
 
-07 --- WHITESPACE
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-  SPACING SYSTEM (px):
-      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-*/
+
