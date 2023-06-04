@@ -1,0 +1,79 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-color: #eff6ff;
+}
+
+.section-auth {
+    display: grid;
+
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 35rem 35rem;
+    column-gap: 2.4rem;
+
+}
+
+.auth-column-right {
+    border: 1px solid #d1d5db;
+}
+
+.logo {
+    width: 100%;
+}
+
+.auth-img {
+    width: 100%;
+    justify-self: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 3.2rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: inherit;
+    background-color: #f3f4f6;
+    border: 1px solid #4b5563;
+    border-radius: 4px;
+}
+
+.signup-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+}
+
+.line {
+    width: 40%;
+    height: 0.1rem;
+    background-color: #4b5563;
+    
+}
+
+.or {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #6b7280;
+}
+
+.signup-text {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.signup-cta-text {
+    color: #3b82f6;
+}

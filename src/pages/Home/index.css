@@ -1,0 +1,17 @@
+.grid-reels {
+    display: grid;
+    grid-template-columns: 20rem 1fr 30rem;
+    column-gap: 4.8rem;
+}
+
+.flow {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+.post {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+
+    gap: 1.2rem;
+    padding: 1.2rem;
+}
+
+.post-header img {
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.post-owner {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.post-img {
+    width: 100%;
+    min-height: 40rem;
+}
+
+.post-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.post-icon--l {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+
+.post-footer {
+    padding: 0.8rem;
+}
+
+.post-footer-left {
+    display: flex;
+    gap: 1.2rem;
+}

@@ -1,0 +1,34 @@
+
+.sidebar-left {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+
+.sidebar-left-link {
+    padding: 1.2rem;
+}
+
+.sidebar-left-link-item:link,
+.sidebar-left-link-item:visited {
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    color: #000;
+}
+
+.sidebar-left-link span {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.post-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.post-icon--l {
+    width: 3.2rem;
+    height: 3.2rem;
+}
