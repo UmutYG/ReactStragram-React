@@ -131,3 +131,32 @@ a:visited {
 }
 
 
+.btn {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0.8rem 1.6rem;
+    font-weight: bold;
+
+}
+
+
+.btn--primary {
+    background-color: var(--primary400);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    opacity: 0.75;
+}
+
+.btn--outline {
+    border: 1px solid var(--primary400);
+    color: inherit;
+}
+
+.btn--outline:hover {
+    background-color: red;
+    border-color: red;
+    color: #fff;
+}

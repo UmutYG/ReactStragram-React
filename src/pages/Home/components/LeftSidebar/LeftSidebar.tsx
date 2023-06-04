@@ -1,15 +1,21 @@
+import React from 'react'
+import { useDispatch } from 'react-redux';
+
 import CreateIcon from '../../../../assets/svg/CreateIcon';
 import ExploreIcon from '../../../../assets/svg/ExploreIcon';
 import HomeIcon from '../../../../assets/svg/HomeIcon';
 import ReelsIcon from '../../../../assets/svg/ReelsIcon';
 import SearchIcon from '../../../../assets/svg/SearchIcon';
 import classes from './index.module.css';
+import { postActions } from '../../../../store/reducers/PostReducer';
 
-interface LeftSidebarProps {
-    onOverlayOpen: () => void;
-}
+const LeftSidebar: React.FC = () => {
+    const dispatch = useDispatch();
 
-const LeftSidebar: React.FC<LeftSidebarProps> = (props) => {
+    const openNewPostHandler = () => {
+        dispatch(postActions.openPostModal());
+    }
+
     return (
         <div className={classes['sidebar-left']}>
             <ul className={classes['sidebar-left-links']}>
@@ -17,7 +23,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = (props) => {
                 <SidebarLink title="Ara" svg={<SearchIcon />} />
                 <SidebarLink title="Keşfet" svg={<ExploreIcon />} />
                 <SidebarLink title="Reels" svg={<ReelsIcon />} />
-                <SidebarLink onClick={props.onOverlayOpen} title="Oluştur" svg={<CreateIcon />} />
+                <SidebarLink onClick={openNewPostHandler} title="Oluştur" svg={<CreateIcon />} />
             </ul>
         </div>
     );
@@ -26,7 +32,7 @@ const LeftSidebar: React.FC<LeftSidebarProps> = (props) => {
 interface SidebarLinkProps {
     onClick?: () => void;
     title: string;
-    svg: any;
+    svg: React.ReactNode;
 }
 const SidebarLink: React.FC<SidebarLinkProps> = (props) => {
     return (

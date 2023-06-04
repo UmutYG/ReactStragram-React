@@ -1,6 +1,6 @@
 import './index.css';
 
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import LeftSidebar from './components/LeftSidebar/LeftSidebar';
 import ModalOverlay from '../../components/ModalOverlay';
@@ -8,29 +8,21 @@ import NewPost from '../../components/NewPost';
 import Post from './components/Post/Post';
 import RightSidebar from './components/RightSidebar/RightSidebar';
 import StatusList from './components/StatusList/StatusList';
+import { RootState } from '../../store/reducers';
 
 const HomePage = () => {
-    const [overlayOpen, setOverlayOpen] = useState(false);
-
-    const overlayOpenHandler = () => {
-        console.log('sa');
-
-        setOverlayOpen(true);
-    };
-
-    const overlayCloseHandler = () => {
-        setOverlayOpen(false);
-    };
-
+    const isPostModalOpen = useSelector(
+        (state: RootState) => state.post.isPostModalOpen
+    );
     return (
         <main>
-            {overlayOpen && (
+            {isPostModalOpen && (
                 <ModalOverlay>
                     <NewPost />
                 </ModalOverlay>
             )}
             <section className="section-reels grid-reels">
-                <LeftSidebar onOverlayOpen={overlayOpenHandler} />
+                <LeftSidebar />
                 <div className="flow">
                     <StatusList />
                     <div className="posts">
