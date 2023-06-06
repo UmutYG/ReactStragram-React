@@ -1,19 +1,20 @@
 import classes from './index.module.css';
+import { Post as PostModal } from '../../../../models/Post';
 
-const Post = () => {
+const Post: React.FC<{post: PostModal}> = ({post}) => {
     return (
         <div className={classes['post']}>
             <header className={classes['post-header']}>
                 <img src="/src/assets/img/memoli.jpeg" alt="post owner image" />
                 <div className={classes['post-owner-box']}>
-                    <p className={classes['post-owner']}>mehmetsubasi</p>
-                    <p className={classes['post-place']}>Hatay, Defne</p>
+                    <p className={classes['post-owner']}>{post.author}</p>
+                    <p className={classes['post-place']}>{post.place}</p>
                 </div>
             </header>
 
             <div className={classes['post-body']}>
                 <img
-                    src="/src/assets/img/post-img-1.jpg"
+                    src={post.imgUrl}
                     className={classes['post-img']}
                     alt="Post image"
                 />

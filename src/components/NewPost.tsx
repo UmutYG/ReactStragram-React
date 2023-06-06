@@ -6,10 +6,25 @@ import { postActions } from '../store/reducers/PostReducer';
 
 const NewPost = () => {
     const [image, setImage] = useState<string | null>(null);
+    const [imageUrl, setImageUrl] = useState<string>('');
+    const [description, setDescription] = useState<string>('');
+
     const dispatch = useDispatch();
 
     const closePostModalHandler = () => {
         dispatch(postActions.closePostModal());
+    };
+
+    const imageUrlChangeHandler = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setImageUrl(event.target.value);
+    };
+
+    const descriptionChangeHandler = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setDescription(event.target.value);
     };
 
     const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
@@ -18,9 +33,30 @@ const NewPost = () => {
             setImage(URL.createObjectURL(file));
         }
     };
+
+    const submitFormHandler = async (event: React.FormEvent) => {
+        event.preventDefault();
+
+        const response = await fetch('http://localhost:3000/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                imgUrl: imageUrl
+            })
+        });
+        const data = await response.json();
+
+        dispatch(postActions.closePostModal());
+        console.log(data);
+    };
     return (
         <div>
-            <form action="" className={classes['form-new-post']}>
+            <form
+                onSubmit={submitFormHandler}
+                className={classes['form-new-post']}
+            >
                 <label htmlFor="image" className="text-m">
                     Fotoğraf Yükle
                 </label>
@@ -39,8 +75,17 @@ const NewPost = () => {
                         />
                     )}
                 </div>
+                <label htmlFor="imgUrl">Your Image Url</label>
+                <input
+                    onChange={imageUrlChangeHandler}
+                    type="text"
+                    name="image"
+                    id="image"
+                    className={classes['post-description']}
+                />
                 <label htmlFor="description">Description</label>
                 <input
+                    onChange={descriptionChangeHandler}
                     type="text"
                     name="description"
                     id="description"
