@@ -15,7 +15,7 @@ const AuthPage: React.FC = () => {
                     <div className="auth-column-right">
                         <img
                             className="logo"
-                            src="img/logo.png"
+                            src="/src/assets/img/logo.png"
                             alt="ReactStagram logo"
                         />
                         <AuthForm />
