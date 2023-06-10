@@ -8,7 +8,8 @@ import store from './store';
 const router = createBrowserRouter([
     { path: '/', element: <HomePage /> },
 
-    { path: '/auth', element: <AuthPage /> }
+    { path: '/login', element: <AuthPage mode="login" /> },
+    { path: '/signup', element: <AuthPage mode="signup"/> },
 ]);
 
 function App() {

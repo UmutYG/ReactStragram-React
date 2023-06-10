@@ -2,7 +2,10 @@ import './index.css';
 
 import AuthForm from './components/AuthForm.jsx';
 
-const AuthPage: React.FC = () => {
+interface AuthPageProps {
+    mode: 'login' | 'signup'
+}
+const AuthPage: React.FC<AuthPageProps> = (props) => {
     return (
         <main className="main">
             <section className="section-auth">
@@ -18,7 +21,7 @@ const AuthPage: React.FC = () => {
                             src="/src/assets/img/logo.png"
                             alt="ReactStagram logo"
                         />
-                        <AuthForm />
+                        <AuthForm mode={props.mode}/>
                     </div>
                 </div>
             </section>

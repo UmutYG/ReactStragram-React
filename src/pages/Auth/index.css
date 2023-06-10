@@ -71,9 +71,12 @@
 
 .signup-text {
     font-size: 1.4rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
 }
 
 .signup-cta-text {
     color: #3b82f6;
+
 }

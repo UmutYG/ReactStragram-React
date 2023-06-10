@@ -81,6 +81,10 @@ body {
     margin-bottom: 1.2rem !important;
 }
 
+.margin-bottom-md {
+    margin-bottom: 3.2rem !important;
+}
+
 .margin-top-sm {
     margin-top: 1.2rem !important;
 }
@@ -116,6 +120,13 @@ a:visited {
 .icon--l {
     width: 3.2rem;
     height: 3.2rem;
+}
+
+.loading-gif {
+    width: 2.4rem;
+    height: 2.4rem;
+    mix-blend-mode: color-burn;
+    
 }
 
 
@@ -155,3 +166,5 @@ a:visited {
     border-color: red;
     color: #fff;
 }
+
+
