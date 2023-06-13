@@ -2,6 +2,8 @@ import classes from './index.module.css';
 import { Post as PostModal } from '../../../../models/Post';
 
 const Post: React.FC<{post: PostModal}> = ({post}) => {
+    console.log(post);
+    
     return (
         <div className={classes['post']}>
             <header className={classes['post-header']}>
@@ -14,7 +16,7 @@ const Post: React.FC<{post: PostModal}> = ({post}) => {
 
             <div className={classes['post-body']}>
                 <img
-                    src={post.imgUrl}
+                    src={`http://localhost:3000/${post.imgUrl}`}
                     className={classes['post-img']}
                     alt="Post image"
                 />

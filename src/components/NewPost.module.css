@@ -6,28 +6,32 @@
 }
 
 
-label, input {
+.input-box {
+    margin-bottom: 2.4rem;
+}
+
+
+label, input, textarea {
     display: block;
-    margin-bottom: 1.2rem;
-
 }
 
-.uploaded-img-box {
+label {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+input, textarea {
     width: 100%;
-    height: 30rem;
+    padding: 0.3rem 0.6rem;
+    border: 2px solid var(--primary300);
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
-.img-upload {
-    height: 100%;
-}
 
-.post-description {
-    width: 100%;
-    min-height: 15rem;
-    background-color: var(--gray100);
-    border: none;
-    text-align: start;
-}
+
 
 .form-buttons {
     display: flex;
