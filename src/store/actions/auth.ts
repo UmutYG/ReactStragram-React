@@ -1,25 +1,18 @@
 import { Dispatch } from 'react';
 
+import { LoginReqForm, SignupReqForm } from '../../pages/Auth/types';
 import { loadingActions } from '../reducers/LoadingReducer';
 
-interface LoginParams {
-    email: string;
-    password: string;
-}
-
 export const login =
-    (email: string, password: string) => async (dispatch: any) => {
+    (formData: LoginReqForm) => async (dispatch: any) => {
         dispatch(loadingActions.setIsLoggingIn(true));
-        const params: LoginParams = {
-            email: email,
-            password: password
-        };
+       
         const response = await fetch('http://localhost:3000/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(params)
+            body: JSON.stringify(formData)
         });
 
         const data = await response.json();
@@ -29,32 +22,20 @@ export const login =
         dispatch(loadingActions.setIsLoggingIn(false));
     };
 
-interface SignupParams {
-    username: string;
-    name: string;
-    email: string;
-    password: string;
-}
 
-export const signup =
-    (username: string, name: string, email: string, password: string) =>
-    async (dispatch: any) => {
-        dispatch(loadingActions.setIsSigningUp(true));
-        const params: SignupParams = {
-            username,
-            name,
-            email,
-            password
-        };
-        const response = await fetch('http://localhost:3000/signup', {
-            method: 'POST',
-            headers: {
-                'Content Type': 'application/json'
-            },
-            body: JSON.stringify(params)
-        });
 
-        const data = response.json();
+export const signup = (formData: SignupReqForm) => async (dispatch: any) => {
+    dispatch(loadingActions.setIsSigningUp(true));
+    
+    const response = await fetch('http://localhost:3000/signup', {
+        method: 'POST',
+        headers: {
+            'Content Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
 
-        dispatch(loadingActions.setIsSigningUp(false))
-    };
+    const data = response.json();
+
+    dispatch(loadingActions.setIsSigningUp(false));
+};
