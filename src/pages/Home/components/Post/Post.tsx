@@ -2,7 +2,6 @@ import classes from './index.module.css';
 import { Post as PostModal } from '../../../../models/Post';
 
 const Post: React.FC<{post: PostModal}> = ({post}) => {
-    console.log(post);
     
     return (
         <div className={classes['post']}>

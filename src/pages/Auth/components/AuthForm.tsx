@@ -19,12 +19,12 @@ const AuthForm: React.FC<AuthFormProps> = (props) => {
 
     const submitHandler = async (formData: AuthReqForm) => {
         if ('username' in formData) {
-            dispatch(signup(formData));
+            await dispatch(signup(formData));
         } else {
-            dispatch(login(formData));
+            await dispatch(login(formData));
         }
         // do login or signup depends on formData
-        // navigate('/');
+        navigate('/');
     };
 
     return (

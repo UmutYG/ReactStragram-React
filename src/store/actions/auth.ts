@@ -15,6 +15,11 @@ export const login =
             body: JSON.stringify(formData)
         });
 
+        if(!response.ok) {
+            console.log(response);
+            return;
+        }
+
         const data = await response.json();
 
         console.log(data);
@@ -26,16 +31,22 @@ export const login =
 
 export const signup = (formData: SignupReqForm) => async (dispatch: any) => {
     dispatch(loadingActions.setIsSigningUp(true));
+    console.log("signup request");
     
     const response = await fetch('http://localhost:3000/signup', {
         method: 'POST',
         headers: {
-            'Content Type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
     });
+    console.log(response);
+    
 
-    const data = response.json();
+    const data = await response.json();
+
+    console.log(data);
+    
 
     dispatch(loadingActions.setIsSigningUp(false));
 };

@@ -21,11 +21,8 @@ const HomePage = () => {
     useEffect(() => {
         const getPosts = async () => {
             const response = await fetch('http://localhost:3000/posts');
-            console.log(response);
-            
             const data = await response.json();
             setPosts(data.posts);
-            console.log(data.posts);
             
         };
 
