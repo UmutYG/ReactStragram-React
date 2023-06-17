@@ -1,13 +1,13 @@
-import { Dispatch } from 'react';
-
 import { LoginReqForm, SignupReqForm } from '../../pages/Auth/types';
+import { ResponseModal } from '../../models/types';
 import { loadingActions } from '../reducers/LoadingReducer';
+import { setToken } from '../reducers/AuthReducer';
 
 export const login =
     (formData: LoginReqForm) => async (dispatch: any) => {
         dispatch(loadingActions.setIsLoggingIn(true));
        
-        const response = await fetch('http://localhost:3000/signup', {
+        const response = await fetch('http://localhost:3000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -20,10 +20,11 @@ export const login =
             return;
         }
 
-        const data = await response.json();
+        const responseJson = await response.json() as ResponseModal;
 
-        console.log(data);
 
+        console.log(responseJson);
+        dispatch(setToken(responseJson.data));
         dispatch(loadingActions.setIsLoggingIn(false));
     };
 
@@ -31,7 +32,6 @@ export const login =
 
 export const signup = (formData: SignupReqForm) => async (dispatch: any) => {
     dispatch(loadingActions.setIsSigningUp(true));
-    console.log("signup request");
     
     const response = await fetch('http://localhost:3000/signup', {
         method: 'POST',
@@ -40,7 +40,8 @@ export const signup = (formData: SignupReqForm) => async (dispatch: any) => {
         },
         body: JSON.stringify(formData)
     });
-    console.log(response);
+
+    
     
 
     const data = await response.json();

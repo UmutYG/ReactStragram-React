@@ -4,12 +4,13 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import AuthPage from './pages/Auth';
 import HomePage from './pages/Home';
 import store from './store';
+import { loader as PostsLoader } from './pages/Home/components/Posts';
 
 const router = createBrowserRouter([
-    { path: '/', element: <HomePage /> },
+    { path: '/', element: <HomePage />, loader: PostsLoader },
 
     { path: '/login', element: <AuthPage mode="login" /> },
-    { path: '/signup', element: <AuthPage mode="signup"/> },
+    { path: '/signup', element: <AuthPage mode="signup" /> }
 ]);
 
 function App() {

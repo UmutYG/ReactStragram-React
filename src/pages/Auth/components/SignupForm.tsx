@@ -3,6 +3,7 @@ import '../index.css';
 import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 
+import ButtonAsync from '../../../components/ButtonAsync';
 import Input from '../../../components/Input';
 import { SignupValidate } from '../../../util/validation';
 import { SubmitPropsAuth } from '../types';
@@ -64,12 +65,8 @@ const SignUpForm: React.FC<SubmitPropsAuth> = (props) => {
             {formik.touched.password && formik.errors.password ? (
                 <div>{formik.errors.password}</div>
             ) : null}
-            <button
-                type="submit"
-                className="btn btn--full btn--primary margin-top-sm margin-bottom-md"
-            >
-                Kaydol
-            </button>
+
+            <ButtonAsync text='Kaydol'/>
 
             <div className="signup-cta">
                 <div className="line"></div>

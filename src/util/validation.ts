@@ -20,8 +20,8 @@ export const SignupValidate = (values: any) => {
     const errors: any = {};
     if (!values.username) {
         errors.username = 'Required';
-    } else if (values.username.length < 4) {
-        errors.username = 'Must be 4 characters or more';
+    } else if (values.username.length < 5) {
+        errors.username = 'Must be 5 characters or more';
     }
 
     if (!values.name) {
