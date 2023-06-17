@@ -25,6 +25,7 @@ export const login =
 
         console.log(responseJson);
         dispatch(setToken(responseJson.data));
+        localStorage.setItem('@token', responseJson.data);
         dispatch(loadingActions.setIsLoggingIn(false));
     };
 

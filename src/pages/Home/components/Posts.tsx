@@ -19,8 +19,18 @@ const Posts = () => {
 export default Posts;
 
 export const loader = async () => {
-    const response = await fetch('http://localhost:3000/posts');
-    const responseJson = (await response.json()) as ResponseModal;
+    const token = localStorage.getItem('@token');
+    console.log(token);
 
+    const response = await fetch('http://localhost:3000/posts', {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    });
+    console.log(response);
+    
+    const responseJson = (await response.json()) as ResponseModal;
+    console.log(responseJson);
+    
     return responseJson.data;
 };
